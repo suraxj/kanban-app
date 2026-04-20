@@ -9,7 +9,6 @@ const BoardColumn = ({ statusId, statusConfig, onOpenTask, onAddTask }) => {
   const columnTasks = tasks.filter(t => t.status === statusId);
   const Icon = statusConfig.icon;
 
-  // Setup dnd-kit droppable hooks
   const { setNodeRef, isOver } = useDroppable({
     id: statusId,
   });

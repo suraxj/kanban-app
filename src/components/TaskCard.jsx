@@ -36,7 +36,6 @@ const TaskCard = ({ task, onOpenTask }) => {
           <h4 className="font-bold text-slate-800 leading-snug line-clamp-2">{task.title}</h4>
         </div>
         
-        {/* PointerDown propagation stopped to prevent dnd-kit from blocking the click */}
         <button 
           onPointerDown={(e) => e.stopPropagation()}
           onClick={(e) => { e.stopPropagation(); deleteTask(task.id); }}

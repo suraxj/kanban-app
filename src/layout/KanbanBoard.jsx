@@ -39,14 +39,14 @@ const KanbanBoard = () => {
     <div className="h-screen flex flex-col bg-slate-50 font-sans text-slate-800">
       <header className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between shrink-0 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
             <Calendar size={18} className="text-white" />
           </div>
-          <h1 className="text-xl font-bold text-slate-800 tracking-tight">Kanban Board</h1>
+          <h1 className="text-xl font-bold text-slate-800 tracking-tight">KanBan Board</h1>
         </div>
         <button 
           onClick={() => handleOpenNewTask()}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-sm"
+          className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-sm"
         >
           <Plus size={18} /> <span className="hidden sm:inline">Add Task</span>
         </button>
@@ -54,7 +54,7 @@ const KanbanBoard = () => {
 
       <main className="flex-1 overflow-x-auto overflow-y-hidden">
         <div className="h-full p-6 flex gap-6 items-start">
-          {/* Wrap the board columns in DndContext */}
+          
           <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
             {Object.entries(STATUSES).map(([statusId, config]) => (
               <BoardColumn 

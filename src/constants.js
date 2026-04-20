@@ -1,9 +1,9 @@
 import { AlertCircle, Clock, CheckCircle2 } from 'lucide-react';
 
 export const STATUSES = {
-  'todo': { label: 'To Do', icon: AlertCircle, color: 'text-slate-500', bg: 'bg-slate-100', border: 'border-slate-200' },
-  'in-progress': { label: 'In Progress', icon: Clock, color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-200' },
-  'done': { label: 'Done', icon: CheckCircle2, color: 'text-green-500', bg: 'bg-green-50', border: 'border-green-200' }
+  'todo': { label: 'To Do', icon: AlertCircle  },
+  'in-progress': { label: 'In Progress', icon: Clock },
+  'done': { label: 'Done', icon: CheckCircle2  }
 };
 
 export const PRIORITIES = {
