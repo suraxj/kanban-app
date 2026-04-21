@@ -37,7 +37,7 @@ const KanbanBoard = () => {
 
   return (
     <div className="h-screen flex flex-col bg-slate-50 font-sans text-slate-800">
-      <header className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between shrink-0 shadow-sm">
+      <header className="bg-white border-b border-slate-200 px-4 py-3 md:px-6 md:py-4 flex items-center justify-between shrink-0 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center">
             <Calendar size={18} className="text-white" />
@@ -52,8 +52,8 @@ const KanbanBoard = () => {
         </button>
       </header>
 
-      <main className="flex-1 overflow-x-auto overflow-y-hidden">
-        <div className="h-full p-6 flex gap-6 items-start">
+      <main className="flex-1 overflow-y-auto md:overflow-y-hidden overflow-x-hidden md:overflow-x-auto">
+        <div className="p-4 md:p-6 md:h-full flex flex-col md:flex-row gap-4 md:gap-6 md:items-start">
           
           <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
             {Object.entries(STATUSES).map(([statusId, config]) => (

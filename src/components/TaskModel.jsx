@@ -60,7 +60,7 @@ const TaskModel = ({ isOpen, onClose, task = null, defaultStatus = 'todo' }) => 
         <div className="space-y-6">
           <div>
             <div className="flex items-start justify-between gap-4">
-              <h3 className="text-2xl font-bold text-slate-800">{task.title}</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-800">{task.title}</h3>
               <div className="flex gap-2 shrink-0">
                 <button onClick={() => setIsEditing(true)} className="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors" title="Edit">
                   <Edit2 size={18} />
@@ -116,7 +116,7 @@ const TaskModel = ({ isOpen, onClose, task = null, defaultStatus = 'todo' }) => 
               className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1.5">Status</label>
               <select value={formData.status} onChange={(e) => setFormData({ ...formData, status: e.target.value })} className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg outline-none">
@@ -138,9 +138,9 @@ const TaskModel = ({ isOpen, onClose, task = null, defaultStatus = 'todo' }) => 
             <label className="block text-sm font-semibold text-slate-700 mb-1.5">Tags (comma separated)</label>
             <input type="text" value={formData.tags} onChange={(e) => setFormData({ ...formData, tags: e.target.value })} className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg outline-none" />
           </div>
-          <div className="flex justify-end gap-3 mt-6 border-t border-slate-100 pt-4">
-            <button type="button" onClick={() => task ? setIsEditing(false) : onClose()} className="px-5 py-2.5 text-slate-600 font-medium hover:bg-slate-100 rounded-lg transition-colors">Cancel</button>
-            <button type="submit" className="px-5 py-2.5 bg-blue-600 text-white font-medium hover:bg-blue-700 rounded-lg shadow-sm transition-colors">{task ? 'Save Changes' : 'Create Task'}</button>
+          <div className="flex flex-col-reverse sm:flex-row justify-end gap-3 mt-6 border-t border-slate-100 pt-4">
+            <button type="button" onClick={() => task ? setIsEditing(false) : onClose()} className="w-full sm:w-auto px-5 py-2.5 text-slate-600 font-medium hover:bg-slate-100 rounded-lg transition-colors">Cancel</button>
+            <button type="submit" className="w-full sm:w-auto px-5 py-2.5 bg-blue-600 text-white font-medium hover:bg-blue-700 rounded-lg shadow-sm transition-colors">{task ? 'Save Changes' : 'Create Task'}</button>
           </div>
         </form>
       )}

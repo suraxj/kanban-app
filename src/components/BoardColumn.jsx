@@ -14,7 +14,7 @@ const BoardColumn = ({ statusId, statusConfig, onOpenTask, onAddTask }) => {
   });
 
   return (
-    <div className="flex flex-col flex-1 `min-w-[300px] max-w-[400px]` shrink-0 h-full">
+    <div className="flex flex-col w-full md:flex-1 md:min-w-[280px] md:max-w-[400px] shrink-0 md:h-full">
       <div className={`mb-3 flex items-center justify-between p-3 rounded-xl border ${statusConfig.bg} ${statusConfig.border}`}>
         <div className="flex items-center gap-2 font-bold text-slate-700">
           <Icon size={18} className={statusConfig.color} />
@@ -30,7 +30,7 @@ const BoardColumn = ({ statusId, statusConfig, onOpenTask, onAddTask }) => {
 
       <div 
         ref={setNodeRef}
-        className={`flex-1 overflow-y-auto rounded-xl p-3 flex flex-col gap-3 transition-colors border-2 ${
+        className={`md:flex-1 min-h-[120px] overflow-y-auto rounded-xl p-3 flex flex-col gap-3 transition-colors border-2 ${
           isOver ? 'bg-blue-50/50 border-blue-300 border-dashed' : 'bg-slate-100 border-transparent'
         }`}
       >
